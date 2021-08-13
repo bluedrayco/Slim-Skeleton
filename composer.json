@@ -1,24 +1,19 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
+    "name": "slim/slim2-skeleton",
+    "description": "A Slim 2 Framework for create projects fast",
     "keywords": [
-        "microframework",
+        "MVC",
         "rest",
         "router",
-        "psr7"
+        "psr7",
+        "twig"
     ],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "homepage": "https://github.com/bluedrayco/Slim-Skeleton",
     "license": "MIT",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
-        },
-        {
-            "name": "Pierre Berube",
-            "email": "pierre@lgse.com",
-            "homepage": "http://www.lgse.com/"
+            "name": "Roberto Leroy Monroy Ruiz",
+            "email": "bluedrayco@gmail.com"
         }
     ],
     "require": {
@@ -27,7 +22,9 @@
         "slim/slim": "2.*",
         "slim/views": "0.*",
         "twig/twig": "1.*",
-        "vlucas/phpdotenv":"v5.*"
+        "vlucas/phpdotenv":"v5.*",
+        "illuminate/database": "^8.54",
+        "robmorgan/phinx": "0.11.7"
     },
     "autoload":{
         "psr-0":{
