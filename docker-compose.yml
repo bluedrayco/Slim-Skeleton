@@ -8,7 +8,6 @@ services:
     microservice:
         container_name: microservice-slim
         build: .
-        working_dir: /var/www/html
         #command: php -S 0.0.0.0:8080 -t public
         #environment:
         #    docker: "true"

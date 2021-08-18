@@ -10,6 +10,7 @@ return
             'migrations' => '%%PHINX_CONFIG_DIR%%/db/migrations',
             'seeds' => '%%PHINX_CONFIG_DIR%%/db/seeds'
         ],
+        "migration_base_class" => "Utils\Migration",
         'environments' =>
         [
             'default_database' => 'default',

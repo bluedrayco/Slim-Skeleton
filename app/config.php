@@ -15,8 +15,9 @@ return array(
         'name' => $_ENV['APP_NAME']
     ),
     'view' => array(
+        'debug'=>$env == 'DEV' ? true : false,
         'charset' => 'utf-8',
-        'cache' => realpath('..' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'cache'),
+        'cache' => '..' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'cache',
         'auto_reload' => true,
         'strict_variables' => false,
         'autoescape' => true

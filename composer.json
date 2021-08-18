@@ -28,10 +28,15 @@
     },
     "autoload":{
         "psr-0":{
-            "Controller":"src"
+            "Controller":"src",
+            "Utils":"src"
         }
     },
     "scripts":{
-        "start": "php -S 0.0.0.0:8000 -t public"
+        "start": "docker-compose up",
+        "stop": "docker-compose down",
+        "up": "docker-compose down; docker-compose up",
+        "migrate":"phinx migrate",
+        "rollback":"phinx rollback"
     }
 }
