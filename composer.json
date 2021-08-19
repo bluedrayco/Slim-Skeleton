@@ -23,8 +23,10 @@
         "slim/views": "0.*",
         "twig/twig": "1.*",
         "vlucas/phpdotenv":"v5.*",
-        "illuminate/database": "^8.54",
-        "robmorgan/phinx": "0.11.7"
+        "illuminate/database": "v8.55.0",
+        "robmorgan/phinx": "0.11.7",
+        "illuminate/session": "v8.55.0",
+        "illuminate/filesystem": "v8.55.0"
     },
     "autoload":{
         "psr-0":{

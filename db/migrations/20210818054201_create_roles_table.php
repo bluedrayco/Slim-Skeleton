@@ -1,6 +1,6 @@
 <?php
 
-use Utils\Migration;
+use Utils\Database\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
 class CreateRolesTable extends Migration

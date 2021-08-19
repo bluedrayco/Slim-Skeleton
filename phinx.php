@@ -2,7 +2,6 @@
 
 // load our environment files - used to store credentials & configuration
 Dotenv\Dotenv::createImmutable(__DIR__)->load();
-print_r($_ENV);
 
 return
     [
@@ -10,7 +9,7 @@ return
             'migrations' => '%%PHINX_CONFIG_DIR%%/db/migrations',
             'seeds' => '%%PHINX_CONFIG_DIR%%/db/seeds'
         ],
-        "migration_base_class" => "Utils\Migration",
+        "migration_base_class" => "Utils\Database\Migration",
         'environments' =>
         [
             'default_database' => 'default',

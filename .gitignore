@@ -9,3 +9,5 @@
 .DS_STORE
 composer.lock
 .env
+/sessions/*
+!/sessions/.ignore

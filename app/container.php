@@ -2,11 +2,13 @@
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Illuminate\Database\Capsule\Manager;
+use Utils\Session\SessionManager;
+use Illuminate\Filesystem\Filesystem;
+use Utils\Session\Session;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 
 $app->view(new Twig());
-// Prepare view
 $app->view->parserOptions = $configuration['view'];
 $app->view->parserExtensions = array(new TwigExtension());
 
@@ -24,3 +26,13 @@ $app->container->singleton('db', function ()use($configuration) {
     $capsule->bootEloquent();
     return $capsule;
 });
+
+$manager = new SessionManager($app);
+if ($_ENV['SESSION_DRIVER']==="database"){
+    $manager->setDbConnection($app->db->getConnection());
+}else{
+    $manager->setFilesystem(new Filesystem());
+}
+$session = new Session($manager);
+
+$app->add($session);

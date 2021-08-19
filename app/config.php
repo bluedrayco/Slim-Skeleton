@@ -8,7 +8,10 @@ return array(
         'templates.path' => '..' . DIRECTORY_SEPARATOR . 'templates',
         'cookies.encrypt' => $_ENV['COOKIES_ENCRYPT'],
         'cookies.lifetime' => $_ENV['COOKIES_LIFETIME'],
-        'cookies.secret_key' => $_ENV['COOKIES_SECRET']
+        'cookies.secret_key' => $_ENV['COOKIES_SECRET'],
+        'sessions.driver' => $_ENV['SESSION_DRIVER'],
+        'sessions.table' => $_ENV['SESSION_TABLE'],
+        'sessions.files' => __DIR__ . DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR.$_ENV['SESSION_DIRECTORY']
 
     ),
     'logger' => array(
