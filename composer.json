@@ -1,5 +1,5 @@
 {
-    "name": "slim/slim-skeleton",
+    "name": "tecno_academy/slim-skeleton",
     "description": "A Slim Framework skeleton application for rapid development",
     "keywords": ["microframework","rest","router"],
     "license": "MIT",
@@ -13,8 +13,7 @@
         "php": ">=5.3.0",
         "monolog/monolog": "1.*",
         "slim/slim": "2.*",
-        "slim/views": "0.*",
-        "twig/twig": "1.*",
+        "nette/database": "^3.1",
         "vlucas/phpdotenv":"v5.*"
     },
     "autoload":{
@@ -23,7 +22,7 @@
         }
     },
     "scripts":{
-        "start": "php -S 0.0.0.0:8000 -t public"
+        "start": "php -S 0.0.0.0:8000 -t public_html"
     },
     "config": {
         "process-timeout":0

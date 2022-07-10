@@ -1,9 +1,15 @@
 <?php
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-use Slim\Views\Twig;
+use Nette\Database\Connection;
 
-$app->view(new Twig());
+$app->container->singleton('database',function()use($configuration){
+    return new Connection(
+        $configuration['database']['dsn'], 
+        $configuration['database']['username'], 
+        $configuration['database']['password']
+    );
+});
 
 $app->container->singleton('log', function ()use($configuration) {
     $log = new Logger($configuration['logger']['name']);

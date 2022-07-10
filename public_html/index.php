@@ -2,27 +2,26 @@
 require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 
 use Slim\Slim;
-use Slim\Views\TwigExtension;
 use Dotenv\Dotenv;
 
+// Load Environment Variables
 $dotenv = Dotenv::createImmutable(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR);
 $dotenv->load();
 
 // Get configuration
-$configuration = require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'config.php';
+$configuration = require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'configuration.php';
 
 // Prepare app
 $app = new Slim($configuration['slim']);
 
+// Set compatibility layer 
+require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'compatibility.php';
+
 // Set container definitions
 require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'container.php';
 
-// Prepare view
-$app->view->parserOptions = $configuration['view'];
-$app->view->parserExtensions = array(new TwigExtension());
-
 // Load routes
-require '..'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'routes.php';
+require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'routes.php';
 
 // Run app
 $app->run();

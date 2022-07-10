@@ -1,0 +1,13 @@
+<a href="/user/new"><button>Crear Usuario</button></a>
+<table border='1'>
+<tr>
+<td><b>ID</b></td><td><b>Nombre</b></td><td><b>Acciones</b></td>
+</tr>
+<?php foreach ($users as $user):?>
+    <tr>
+    <td><?=$user->id?></td>
+    <td><?=$user->name?></td>
+    <td><a href='/user/delete/<?=$user->id?>'><button>Eliminar</button></a>
+    </tr>
+<?php endforeach;?>
+</table>
